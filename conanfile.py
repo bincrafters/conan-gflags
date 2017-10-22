@@ -13,7 +13,7 @@ class GflagsConan(ConanFile):
     generators = "cmake"
 
     def source(self):
-        self.run("git clone https://github.com/DariuszOstolski/gflags.git")
+        self.run("git clone https://github.com/gflags/gflags.git")
         self.run("cd gflags && git checkout -b v2.2.1-conan v2.2.1")
         #self.run("git checkout -b v2.2.1-conan v2.2.1")
         # This small hack might be useful to guarantee proper /MT /MD linkage in MSVC
