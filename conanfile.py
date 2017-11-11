@@ -1,5 +1,4 @@
 from conans import ConanFile, CMake, tools
-import os
 
 
 class GflagsConan(ConanFile):
@@ -39,7 +38,7 @@ conan_basic_setup()''')
             if self.options.fPIC:
                 flags.append("-fPIC")
 
-        print("arch: {0} flags {1}".format(self.settings.arch, flags))
+        self.output.info("arch: {0} flags {1}".format(self.settings.arch, flags))
         if compiler in ("clang", "apple-clang"):
             # without the following, compilation gets stuck indefinitely
             flags.append("-Wno-deprecated-declarations")
