@@ -26,6 +26,7 @@ conan_basic_setup()''')
 
     def build(self):
         cmake = CMake(self)
+        cmake.verbose = True
         self.run('cmake sources %s' % cmake.command_line)
         self.run("cmake --build . %s" % cmake.build_config)
 
