@@ -18,7 +18,7 @@ class GflagsTestConan(ConanFile):
             else:
                 flags.append("-m64")
 
-        self.output.info("arch: {0}".format(self.settings.arch))
+        self.output.info("arch: {0} flags: {1}".format(self.settings.arch, flags))
 
         cmake.definitions["CMAKE_C_FLAGS"] = " ".join(flags)
         cmake.definitions["CMAKE_CXX_FLAGS"] = cmake.definitions["CMAKE_C_FLAGS"]
