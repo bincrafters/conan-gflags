@@ -25,7 +25,6 @@ conan_basic_setup()''')
 
     def build(self):
         cmake = CMake(self)
-        cmake.verbose = True
         flags = []
 
         compiler = str(self.settings.compiler)

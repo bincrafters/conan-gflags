@@ -8,7 +8,6 @@ class GflagsTestConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.verbose = True
         compiler = str(self.settings.compiler)
         flags = []
 
