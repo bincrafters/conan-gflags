@@ -18,14 +18,11 @@ class GflagsTestConan(ConanFile):
             else:
                 flags.append("-m64")
 
-            if self.options.fPIC:
-                flags.append("-fPIC")
-
         self.output.info("arch: {0}".format(self.settings.arch))
 
         cmake.definitions["CMAKE_C_FLAGS"] = " ".join(flags)
         cmake.definitions["CMAKE_CXX_FLAGS"] = cmake.definitions["CMAKE_C_FLAGS"]
-        
+
         # Current dir is "test_package/build/<build_id>" and CMakeLists.txt is in "test_package"
         cmake.configure(source_dir=self.conanfile_directory, build_dir="./")
         cmake.build()
