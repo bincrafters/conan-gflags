@@ -9,7 +9,7 @@ class GflagsConan(ConanFile):
     description = "The gflags package contains a C++ library that implements commandline flags processing. "
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = "shared=False", "fPIC=True"
+    default_options = "shared=True", "fPIC=True"
     generators = "cmake"
 
     def source(self):
