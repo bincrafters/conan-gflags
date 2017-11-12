@@ -1,5 +1,5 @@
 [ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/somelib%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/somelib%3Abincrafters/_latestVersion)
-[![Build Status](https://travis-ci.org/DariuszOstolski/conan-gflags.svg?branch=testing%2F2.2.1)](https://travis-ci.org/DariuszOstolski/conan-gflags.svg?branch=testing%2F2.2.1)
+[![Build Status](https://travis-ci.org/DariuszOstolski/conan-gflags.svg?branch=testing%2F2.2.1)](https://travis-ci.org/DariuszOstolski/conan-gflags)
 [![Build status]()]()
 
 [Conan.io](https://conan.io) package for [gflags](https://github.com/gflags/gflags.git) project
