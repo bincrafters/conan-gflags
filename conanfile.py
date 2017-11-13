@@ -66,4 +66,4 @@ conan_basic_setup()''')
                 self.cpp_info.libs = ["gflags"]
             else:
                 self.cpp_info.libs = ["gflags_static"]
-        return "gflags"
+        self.cpp_info.libs = ["gflags"]
