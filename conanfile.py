@@ -61,7 +61,9 @@ conan_basic_setup()''')
         self.copy("*.lib", dst="lib", keep_path=False)
 
     def package_info(self):
-        if self.options.shared:
-            self.cpp_info.libs = ["gflags"]
-        else:
-            self.cpp_info.libs = ["gflags_static"]
+        if self.settings.os == "Windows":
+            if self.options.shared:
+                self.cpp_info.libs = ["gflags"]
+            else:
+                self.cpp_info.libs = ["gflags_static"]
+        return "gflags"
