@@ -37,7 +37,7 @@ conan_basic_setup()''')
             if self.options.fPIC:
                 flags.append("-fPIC")
 
-        self.output.info("arch: {0} flags {1}".format(self.settings.arch, flags))
+        self.output.info("arch: {0}; flags {1}; shared: {3}".format(self.settings.arch, flags, self.options.shared))
         if compiler in ("clang", "apple-clang"):
             # without the following, compilation gets stuck indefinitely
             flags.append("-Wno-deprecated-declarations")
@@ -59,7 +59,7 @@ conan_basic_setup()''')
         self.copy("*.dylib", dst="lib", keep_path=False)
         self.copy("*.a", dst="lib", keep_path=False)
         self.copy("*.lib", dst="lib", keep_path=False)
-        
+
     def package_info(self):
         if self.options.shared:
             self.cpp_info.libs = ["gflags"]
