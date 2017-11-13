@@ -51,7 +51,6 @@ conan_basic_setup()''')
         cmake.build()
         cmake.install()
 
-
     def package(self):
         self.copy("*.h", dst="include/gflags", src="include/gflags")
         self.copy("*.dll", dst="bin", keep_path=False)
@@ -66,4 +65,5 @@ conan_basic_setup()''')
                 self.cpp_info.libs = ["gflags"]
             else:
                 self.cpp_info.libs = ["gflags_static"]
-        self.cpp_info.libs = ["gflags"]
+        else:
+            self.cpp_info.libs = ["gflags"]
