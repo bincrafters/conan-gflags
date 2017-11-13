@@ -37,7 +37,7 @@ conan_basic_setup()''')
             if self.options.fPIC:
                 flags.append("-fPIC")
 
-        self.output.info("arch: {0}; flags {1}; shared: {3}".format(self.settings.arch, flags, self.options.shared))
+        self.output.info("arch: {0}; flags {1}; shared: {2}".format(self.settings.arch, flags, self.options.shared))
         if compiler in ("clang", "apple-clang"):
             # without the following, compilation gets stuck indefinitely
             flags.append("-Wno-deprecated-declarations")
