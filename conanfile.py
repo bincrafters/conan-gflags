@@ -25,6 +25,7 @@ conan_basic_setup()''')
 
     def build(self):
         cmake = CMake(self)
+        cmake.verbose = True
         flags = []
 
         compiler = str(self.settings.compiler)
@@ -67,3 +68,5 @@ conan_basic_setup()''')
                 self.cpp_info.libs = ["gflags_static"]
         else:
             self.cpp_info.libs = ["gflags"]
+            self.cpp_info.libs.extend(["pthread"])
+
