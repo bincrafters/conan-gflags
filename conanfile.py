@@ -66,6 +66,7 @@ conan_basic_setup()''')
                 self.cpp_info.libs = ["gflags"]
             else:
                 self.cpp_info.libs = ["gflags_static"]
+            self.cpp_info.libs.extend(['shlwapi'])
         else:
             self.cpp_info.libs = ["gflags"]
             self.cpp_info.libs.extend(["pthread"])
