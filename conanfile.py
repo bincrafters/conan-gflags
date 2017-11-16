@@ -4,7 +4,7 @@ from conans import ConanFile, CMake, tools
 class GflagsConan(ConanFile):
     name = "gflags"
     version = "2.2.1"
-    license = "MIT License"
+    license = 'BSD 3-clause "New" or "Revised" License'
     url = "gflags"
     description = "The gflags package contains a C++ library that implements commandline flags processing. "
     settings = "os", "compiler", "build_type", "arch"
