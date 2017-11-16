@@ -48,4 +48,4 @@ The following command both runs all the steps of the conan file, and publishes t
     $ conan upload gflags/2.2.1@bincrafters/stable --all -r bincrafters
 
 ## License
-[LICENSE_TYPE](LICENSE)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
