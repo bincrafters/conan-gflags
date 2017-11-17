@@ -3,9 +3,9 @@
 [![Build Status](https://travis-ci.org/bincrafters/conan-gflags.svg?branch=stable%2F2.2.1)](https://travis-ci.org/bincrafters/conan-gflags)
 
 
-[Conan.io](https://conan.io) package for [gflags](https://github.com/gflags/gflags.git) project
+[Conan.io](https://conan.io) package for [gflags](https://github.com/gflags/gflags) project
 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/somelib%3Abincrafters).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/gflags%3Abincrafters).
 
 ## For Users: Use this package
 
@@ -48,4 +48,4 @@ The following command both runs all the steps of the conan file, and publishes t
     $ conan upload gflags/2.2.1@bincrafters/stable --all -r bincrafters
 
 ## License
-[LICENSE_TYPE](LICENSE)
+[BSD 3-clause](LICENSE)
