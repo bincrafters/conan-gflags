@@ -5,7 +5,7 @@ class GflagsConan(ConanFile):
     name = "gflags"
     version = "2.2.1"
     license = 'BSD 3-clause "New" or "Revised" License'
-    url = "gflags"
+    url = "https://github.com/bincrafters/conan-gflags"
     description = "The gflags package contains a C++ library that implements commandline flags processing. "
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
