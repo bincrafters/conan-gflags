@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
     builds_no_static = []
     for settings, options, env_vars, build_requires in builder.builds:
-        if options["shared"] == True:
+        if options["gflags:shared"] == True:
             builds_no_static.append([settings, options, env_vars, build_requires])
 
     builder.builds = builds_no_static
