@@ -12,15 +12,11 @@ class GflagsConan(ConanFile):
     description = "The gflags package contains a C++ library that implements commandline flags processing. "
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False], "nothreads": [True, False]}
-    default_options = "shared=True", "fPIC=True", "nothreads=True"
+    default_options = "shared=False", "fPIC=True", "nothreads=True"
     generators = "cmake"
     exports_sources = ["CMakeLists.txt", "Findgflags.cmake"]
 
     def configure(self):
-
-        if not self.options.shared and self.settings.os == "Windows":
-            raise tools.ConanException("On Windows, static builds are not supported for the gflags package for the time being.")
-        
         if self.settings.os == "Windows":
             self.options.remove("fPIC")
 
@@ -55,4 +51,7 @@ class GflagsConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
-
+        if self.settings.os == "Windows":
+            self.cpp_info.libs.extend(['shlwapi'])
+        else:
+            self.cpp_info.libs.extend(["pthread"])
