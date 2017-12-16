@@ -21,8 +21,6 @@ class GflagsConan(ConanFile):
         if not self.options.shared and self.settings.os == "Windows":
             raise tools.ConanException("On Windows, static builds are not supported for the gflags package for the time being.")
         
-        del self.settings.compiler.libcxx
-        
         if self.settings.os == "Windows":
             self.options.remove("fPIC")
 
