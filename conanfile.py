@@ -14,7 +14,7 @@ class GflagsConan(ConanFile):
     options = {"shared": [True, False], "fPIC": [True, False], "nothreads": [True, False]}
     default_options = "shared=True", "fPIC=True", "nothreads=True"
     generators = "cmake"
-    exports_sources = ["CMakeLists.txt"]
+    exports_sources = ["CMakeLists.txt", "Findgflags.cmake"]
 
     def configure(self):
         del self.settings.compiler.libcxx
@@ -46,6 +46,10 @@ class GflagsConan(ConanFile):
         cmake.configure()
         cmake.build()
         cmake.install()
+
+    def package(self):
+        self.copy("Findgflags.cmake", ".", ".")
+        self.copy("sources/copying*", dst="licenses",  ignore_case=True, keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)

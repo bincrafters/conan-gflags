@@ -10,12 +10,12 @@ find_library(
   NAMES
   gflags
   libgflags
-  gflags_nothread
-  libgflags_nothread
+  gflags_nothreads
+  libgflags_nothreads
   gflags_static
   libgflags_static
-  gflags_nothread_static
-  libgflags_nothread_static
+  gflags_nothreads_static
+  libgflags_nothreads_static
   PATHS
   lib)
 
