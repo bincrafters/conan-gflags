@@ -18,7 +18,7 @@ class GflagsConan(ConanFile):
 
     def configure(self):
 
-        if not self.options.shared and self.settings.compiler == "Visual Studio":
+        if not self.options.shared and self.settings.os == "Windows":
             raise tools.ConanException("On Windows, static builds are not supported for the gflags package for the time being.")
         
         del self.settings.compiler.libcxx
