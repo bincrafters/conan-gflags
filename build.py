@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
     builds_no_static = []
     for settings, options, env_vars, build_requires in builder.builds:
-        if options["gflags:shared"] == True:
+        if (options["gflags:shared"] == True or settings["compiler"] != "Visual Studio"):
             builds_no_static.append([settings, options, env_vars, build_requires])
 
     builder.builds = builds_no_static
