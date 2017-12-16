@@ -17,6 +17,10 @@ class GflagsConan(ConanFile):
     exports_sources = ["CMakeLists.txt", "Findgflags.cmake"]
 
     def configure(self):
+
+        if not self.options.shared:
+            raise tools.ConanException("Static builds are not supported for the gflags package for the time being.")
+        
         del self.settings.compiler.libcxx
         
         if self.settings.os == "Windows":
