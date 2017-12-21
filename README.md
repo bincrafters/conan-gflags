@@ -1,11 +1,12 @@
 [![Download](https://api.bintray.com/packages/bincrafters/public-conan/gflags%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/gflags%3Abincrafters/_latestVersion)
-[![Build status](https://ci.appveyor.com/api/projects/status/8aitfhm66yj79onr?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-gflags)
 [![Build Status](https://travis-ci.org/bincrafters/conan-gflags.svg?branch=stable%2F2.2.1)](https://travis-ci.org/bincrafters/conan-gflags)
+[![Build status](https://ci.appveyor.com/api/projects/status/8aitfhm66yj79onr?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-gflags)
 
+[Conan.io](https://conan.io) package recipe for [gflags](https://github.com/gflags/gflags).
 
-[Conan.io](https://conan.io) package for [gflags](https://github.com/gflags/gflags.git) project
+The gflags package contains a C++ library that implements commandline flags processing. 
 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/somelib%3Abincrafters).
+The packages generated with this **conanfile** can be found on [Bintray](https://bintray.com/bincrafters/public-conan/gflags%3Abincrafters).
 
 ## For Users: Use this package
 
@@ -21,7 +22,7 @@ If you handle multiple dependencies in your project is better to add a *conanfil
     gflags/2.2.1@bincrafters/stable
 
     [generators]
-    txt
+    cmake
 
 Complete the installation of requirements for your project running:
 
@@ -39,6 +40,14 @@ The following command both runs all the steps of the conan file, and publishes t
 
     $ conan create bincrafters/stable
 
+
+### Available Options
+| Option        | Default | Possible Values  |
+| ------------- |:----------------- |:------------:|
+| shared      | True |  [True, False] |
+| fPIC      | True |  [True, False] |
+| nothreads      | True |  [True, False] |
+
 ## Add Remote
 
     $ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
@@ -47,5 +56,10 @@ The following command both runs all the steps of the conan file, and publishes t
 
     $ conan upload gflags/2.2.1@bincrafters/stable --all -r bincrafters
 
-## License
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+## Conan Recipe License
+
+NOTE: The conan recipe license applies only to the files of this recipe, which can be used to build and package gflags.
+It does *not* in any way apply or is related to the actual software being packaged.
+
+[MIT](https://github.com/bincrafters/conan-gflags/blob/testing/2.2.1/LICENSE.md)
+
