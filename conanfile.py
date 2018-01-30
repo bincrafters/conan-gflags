@@ -7,14 +7,16 @@ import os
 class GflagsConan(ConanFile):
     name = "gflags"
     version = "2.2.1"
-    license = 'BSD 3-clause "New" or "Revised" License'
-    url = "gflags"
     description = "The gflags package contains a C++ library that implements commandline flags processing. "
+    url = "https://github.com/bincrafters/conan-gflags"
+    license = 'BSD 3-clause'
+    exports = ["LICENSE.md"]
+    exports_sources = ["CMakeLists.txt", "Findgflags.cmake"]
+    source_subfolder = "source_subfolder"
+    generators = "cmake"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False], "nothreads": [True, False]}
     default_options = "shared=False", "fPIC=True", "nothreads=True"
-    generators = "cmake"
-    exports_sources = ["CMakeLists.txt", "Findgflags.cmake"]
 
     def configure(self):
         if self.settings.os == "Windows":
@@ -23,7 +25,7 @@ class GflagsConan(ConanFile):
     def source(self):
         source_url = "https://github.com/gflags/gflags"
         tools.get("{0}/archive/v{1}.tar.gz".format(source_url, self.version))
-        os.rename("%s-%s" % (self.name, self.version), "sources")
+        os.rename("%s-%s" % (self.name, self.version), self.source_subfolder)
 
     def build(self):
         cmake = CMake(self)
@@ -47,7 +49,7 @@ class GflagsConan(ConanFile):
 
     def package(self):
         self.copy("Findgflags.cmake", ".", ".")
-        self.copy("sources/copying*", dst="licenses",  ignore_case=True, keep_path=False)
+        self.copy("COPYING.txt", dst="licenses", src=self.source_subfolder)
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
