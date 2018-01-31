@@ -4,6 +4,7 @@
 from conans import ConanFile, CMake, tools
 import os
 
+
 class GflagsConan(ConanFile):
     name = "gflags"
     version = "2.2.1"
