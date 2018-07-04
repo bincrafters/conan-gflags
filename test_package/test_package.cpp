@@ -6,7 +6,7 @@ DEFINE_string(languages, "english,french,german",
               "comma-separated list of languages to offer in the 'lang' menu");
 
 int main(int argc, char **argv) {
-    gflags::ShowUsageWithFlags(argv[0]);
-    gflags::ParseCommandLineFlags(&argc, &argv, true);
+    GFLAGS_NAMESPACE::ShowUsageWithFlags(argv[0]);
+    GFLAGS_NAMESPACE::ParseCommandLineFlags(&argc, &argv, true);
     return 0;
 }
