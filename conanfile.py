@@ -43,8 +43,6 @@ class GflagsConan(ConanFile):
         cmake.definitions["REGISTER_INSTALL_PREFIX"] = False
         cmake.definitions["GFLAGS_NAMESPACE"] = self.options.namespace
 
-        if self.settings.os != "Windows":
-            cmake.definitions['CMAKE_POSITION_INDEPENDENT_CODE'] = self.options.fPIC
         cmake.configure()
         cmake.build()
         cmake.install()
