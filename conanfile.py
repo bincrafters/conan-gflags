@@ -16,8 +16,8 @@ class GflagsConan(ConanFile):
     source_subfolder = "source_subfolder"
     generators = "cmake"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False], "nothreads": [True, False]}
-    default_options = "shared=False", "fPIC=True", "nothreads=True"
+    options = {"shared": [True, False], "fPIC": [True, False], "nothreads": [True, False], "namespace": "ANY"}
+    default_options = "shared=False", "fPIC=True", "nothreads=True", "namespace=gflags"
 
     def configure(self):
         if self.settings.os == "Windows":
@@ -41,9 +41,8 @@ class GflagsConan(ConanFile):
         cmake.definitions["INSTALL_STATIC_LIBS"] = not self.options.shared
         cmake.definitions["REGISTER_BUILD_DIR"] = False
         cmake.definitions["REGISTER_INSTALL_PREFIX"] = False
-        
-        if self.settings.os != "Windows":
-            cmake.definitions['CMAKE_POSITION_INDEPENDENT_CODE'] = self.options.fPIC
+        cmake.definitions["GFLAGS_NAMESPACE"] = self.options.namespace
+
         cmake.configure()
         cmake.build()
         cmake.install()
