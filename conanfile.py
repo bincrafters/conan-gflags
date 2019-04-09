@@ -55,5 +55,5 @@ class GflagsConan(ConanFile):
         self.cpp_info.libs = tools.collect_libs(self)
         if self.settings.os == "Windows":
             self.cpp_info.libs.extend(['shlwapi'])
-        else:
+        elif self.settings.os != "Android":
             self.cpp_info.libs.extend(["pthread"])
