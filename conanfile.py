@@ -7,7 +7,7 @@ import os
 
 class GflagsConan(ConanFile):
     name = "gflags"
-    version = "2.2.1"
+    version = "2.2.2"
     description = "The gflags package contains a C++ library that implements commandline flags processing"
     topics = ("conan", "gflags", "cli", "flags")
     url = "https://github.com/bincrafters/conan-gflags"
@@ -29,7 +29,7 @@ class GflagsConan(ConanFile):
             self.options.remove("fPIC")
 
     def source(self):
-        sha256 = "ae27cdbcd6a2f935baa78e4f21f675649271634c092b1be01469440495609d0e"
+        sha256 = "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf"
         tools.get("{0}/archive/v{1}.tar.gz".format(self.homepage, self.version), sha256=sha256)
         os.rename("%s-%s" % (self.name, self.version), self._source_subfolder)
 
