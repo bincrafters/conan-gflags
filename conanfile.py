@@ -14,7 +14,7 @@ class GflagsConan(ConanFile):
     homepage = "https://github.com/gflags/gflags"
     license = 'BSD-3-Clause'
     exports = ["LICENSE.md"]
-    exports_sources = ["CMakeLists.txt", "Findgflags.cmake"]
+    exports_sources = ["CMakeLists.txt"]
     generators = "cmake"
 
     settings = "os", "compiler", "build_type", "arch"
@@ -68,4 +68,4 @@ class GflagsConan(ConanFile):
         if self.settings.os == "Windows":
             self.cpp_info.libs.extend(['shlwapi'])
         elif self.settings.os != "Android":
-            self.cpp_info.libs.extend(["pthread"])
+            self.cpp_info.libs.extend(["pthread", "m"])
