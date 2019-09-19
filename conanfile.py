@@ -13,6 +13,7 @@ class GflagsConan(ConanFile):
     url = "https://github.com/bincrafters/conan-gflags"
     homepage = "https://github.com/gflags/gflags"
     license = 'BSD-3-Clause'
+    author = "Bincrafters <bincrafters@gmail.com>"
     exports = ["LICENSE.md"]
     exports_sources = ["CMakeLists.txt"]
     generators = "cmake"
